@@ -8,7 +8,7 @@ def call(Map configMap){
         environment { 
             packageVersion = ''
             // can maintain in pipeline globals
-            //nexusURL = '172.31.5.95:8081'
+            //nexusURL = '172.31.88.161:8081'
         }
         options {
             timeout(time: 1, unit: 'HOURS')
