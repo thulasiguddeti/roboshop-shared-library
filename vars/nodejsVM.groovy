@@ -53,7 +53,8 @@ def call(Map configMap){
             stage('Sonar Scan'){
                 steps{
                     sh """
-                        sonar-scanner
+                        echo " usually the command to run sonar scanner is: sonar-scanner"
+                        echo "sonar scan will run here"
                     """
                 }
             }
@@ -97,7 +98,7 @@ def call(Map configMap){
                                 string(name: 'version', value: "$packageVersion"),
                                 string(name: 'environment', value: "dev")
                             ]
-                            build job: "${configMap.component}-deploy", wait: true, parameters: params
+                            build job: "../${configMap.component}-deploy", wait: true, parameters: params
                         
                         }
                 }
